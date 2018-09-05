@@ -56,7 +56,7 @@ const Article = (props) => {
 
         <Admin>
           <Link
-            to={{ pathname: `/blog` }}
+            to={{ pathname: `/` }}
             className="link"
           >
             <i
