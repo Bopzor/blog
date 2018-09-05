@@ -39,9 +39,8 @@ class ArticleForm extends React.Component {
     });
   }
 
-  static getDerivedStateFromProps() {
+  componentDidUpdate() {
     window.scrollTo(0,0);
-    return null;
   }
 
   handleTitleChange(e) {
