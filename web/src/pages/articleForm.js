@@ -40,7 +40,9 @@ class ArticleForm extends React.Component {
   }
 
   componentDidUpdate() {
-    window.scrollTo(0,0);
+    if (this.state.titleState === 'error' || this.state.contentState === 'error') {
+      window.scrollTo(0,0);
+    }
   }
 
   handleTitleChange(e) {
@@ -55,10 +57,10 @@ class ArticleForm extends React.Component {
     const values = this.state.selectValues.slice();
     const idx = values.indexOf(e.target.value);
 
-    if (idx !== - 1) {
-      values.splice(idx, 1);
-    } else {
+    if (idx === - 1) {
       values.push(e.target.value);
+    } else {
+      values.splice(idx, 1);
     }
 
     this.setState({selectValues: values});
